@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.finalproject.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addContactFragment2"
+            app:destination="@id/addContactFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_contactViewFragment2"
+            app:destination="@id/contactViewFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addContactFragment2"
+        android:name="com.example.finalproject.AddContactFragment"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/fragment_add_contact" >
+        <action
+            android:id="@+id/action_addContactFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="firstName"
+            app:argType="string"
+            android:defaultValue="Name" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string"
+            android:defaultValue="Phone Number" />
+        <argument
+            android:name="lastName"
+            app:argType="string"
+            android:defaultValue="Name" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="Email" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactViewFragment2"
+        android:name="com.example.finalproject.ContactViewFragment"
+        android:label="fragment_contact_viewer"
+        tools:layout="@layout/fragment_contact_viewer" >
+        <action
+            android:id="@+id/action_contactViewFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_contactViewFragment2_to_addContactFragment2"
+            app:destination="@id/addContactFragment2" />
+    </fragment>
+</navigation>
